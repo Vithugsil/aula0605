@@ -17,11 +17,11 @@ def dbConnection():
     )
     
     cursor = db.cursor()
-    cursor.execute("SELECT 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'; ")
+    cursor.execute("SELECT 'Hello from Flask and MySQL!'; ")
     result = cursor.fetchone()
     cursor.close()
     db.close()
-    return jsonify({"msg":result[0]})
+    return result[0]
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=True)
